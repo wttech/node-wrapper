@@ -4,27 +4,40 @@
 
 # Node Wrapper(s)
 
-Node/NPM/NPX wrapper scripts for automatic setup and utilization of Node.js in local or project-specific environments
+This project provides Node/NPM/NPX wrapper scripts. These scripts automate the setup and utilization of Node.js in local or project-specific environments.
 
-# Usage
+# Rationale
 
-Instead of installing Node.js globally, you can replace your commands to use the wrapper scripts. This way, you can have multiple versions of Node.js installed on your machine and use them in different projects.
+The Node.js ecosystem is vast and diverse, leading to several challenges:
 
-Copy the scripts to your project directory then replace the commands in your project scripts:
+1. **Multiple Project Requirements**: Different projects may require different versions of Node.js, NPM, or NPX. This diversity can lead to conflicts when working on multiple projects simultaneously.
 
-- Change `node` to `sh nodew`
-- Change `npm` to `sh npmw`
-- Change `npx` to `sh npxw`
+2. **Environment Constraints**: In certain environments, such as CI/CD pipelines or Docker containers, Node.js may not be installed by default. This can pose challenges in setting up and maintaining the development environment.
 
+3. **Version Management**: Managing multiple versions of Node.js on the same machine can be complex and error-prone.
 
-For example:
+The Node Wrapper scripts aim to address these challenges by providing a flexible and easy-to-use solution for managing Node.js versions.
+
+## Usage
+
+The wrapper scripts allow you to use different versions of Node.js across various projects without needing a global installation.
+
+To use the wrapper scripts, follow these steps:
+
+1. Copy the scripts to your project directory.
+2. Replace the commands in your project scripts:
+    - Replace `node` with `sh nodew`
+    - Replace `npm` with `sh npmw`
+    - Replace `npx` with `sh npxw`
+
+Here's an example:
 
 ```shell
 % sh npxw --version
 10.7.0
 ```
 
-Note that the directory named 'node' will be created and be sure to ignore it in VCS. That's it! :)
+Please note that a directory named 'node' will be created. Make sure to add it to your VCS ignore list.
 
 # Authors
 
